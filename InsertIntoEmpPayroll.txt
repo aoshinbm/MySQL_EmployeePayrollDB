@@ -1,0 +1,15 @@
+mysql> insert into EmployeePayroll
+    -> values
+    -> (1,"Regina",23000,"2019-8-14"),
+    -> (2,"Zeith",17000,"2004-1-1");
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into EmployeePayroll
+    -> (name,salary,start_date)
+    -> values
+    -> ("Romaa",30000,"2014-8-12"),
+    -> ("Pinku",17000,"2008-10-21"),
+    -> ("Zain",23450,"2015-2-3");
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
