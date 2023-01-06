@@ -1,0 +1,26 @@
+mysql> select salary,name,start_date from EmployeePayroll
+    -> where name="Zain";
++--------+------+------------+
+| salary | name | start_date |
++--------+------+------------+
+|  23450 | Zain | 2015-02-03 |
++--------+------+------------+
+1 row in set (0.00 sec)
+
+mysql> select name,salary,start_date from EmployeePayroll
+    -> where start_date between CAST("2018-1-1" as DATE) and DATE(NOW());
++--------+--------+------------+
+| name   | salary | start_date |
++--------+--------+------------+
+| Regina |  23000 | 2019-08-14 |
++--------+--------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from EmployeePayroll
+    -> where start_date between CAST("2018-1-1" as DATE) and DATE(NOW());
++--------+--------+--------+------------+
+| emp_id | name   | salary | start_date |
++--------+--------+--------+------------+
+|      1 | Regina |  23000 | 2019-08-14 |
++--------+--------+--------+------------+
+1 row in set (0.00 sec)
