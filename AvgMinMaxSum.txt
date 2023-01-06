@@ -1,0 +1,77 @@
+mysql> select sum(salary) from EmployeePayroll
+    -> where gender="female" group by gender;
++-------------+
+| sum(salary) |
++-------------+
+|       70000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(salary) from EmployeePayroll;
++-------------+
+| sum(salary) |
++-------------+
+|      110450 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select min(salary) from EmployeePayroll
+    -> where gender="male" group by gender;
++-------------+
+| min(salary) |
++-------------+
+|       17000 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> select min(salary) from EmployeePayroll;
++-------------+
+| min(salary) |
++-------------+
+|       17000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary) from EmployeePayroll
+    -> where gender="male" group by gender;
++-------------+
+| max(salary) |
++-------------+
+|       23450 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary) from EmployeePayroll
+    -> where gender="female" group by gender;
++-------------+
+| max(salary) |
++-------------+
+|       30000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(name) from EmployeePayroll
+    -> where gender="female" group by gender;
++-------------+
+| count(name) |
++-------------+
+|           3 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(name) from EmployeePayroll
+    -> where gender="male" group by gender;
++-------------+
+| count(name) |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from EmployeePayroll;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.01 sec)
