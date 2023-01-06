@@ -1,0 +1,17 @@
+mysql> create table EmployeePayroll (
+    -> emp_id int Primary Key AUTO_INCREMENT,
+    -> name varchar(30),
+    -> salary int,
+    -> start_date date );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc EmployeePayroll;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| emp_id     | int         | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(30) | YES  |     | NULL    |                |
+| salary     | int         | YES  |     | NULL    |                |
+| start_date | date        | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
