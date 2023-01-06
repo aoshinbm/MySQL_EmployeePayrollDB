@@ -1,0 +1,55 @@
+alter table EmployeePayroll
+add gender varchar(150) not null;
+desc EmployeePayroll;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| emp_id     | int          | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(30)  | YES  |     | NULL    |                |
+| salary     | int          | YES  |     | NULL    |                |
+| start_date | date         | YES  |     | NULL    |                |
+| gender     | varchar(150) | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+
+mysql> UPDATE EmployeePayroll
+    -> SET gender = "female"
+    -> WHERE emp_id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+mysql> UPDATE EmployeePayroll
+    -> SET gender = "female"
+    -> WHERE name="Romaa";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE EmployeePayroll
+    -> SET gender = "male"
+    -> WHERE salary=23450;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE EmployeePayroll
+    -> SET gender = "male"
+    -> WHERE emp_id = 2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE EmployeePayroll
+    -> SET gender = "female"
+    -> WHERE name="Pinku";
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from EmployeePayroll;
++--------+--------+--------+------------+--------+
+| emp_id | name   | salary | start_date | gender |
++--------+--------+--------+------------+--------+
+|      1 | Regina |  23000 | 2019-08-14 | female |
+|      2 | Zeith  |  17000 | 2004-01-01 | male   |
+|      3 | Romaa  |  30000 | 2014-08-12 | female |
+|      4 | Pinku  |  17000 | 2008-10-21 | female |
+|      5 | Zain   |  23450 | 2015-02-03 | male   |
++--------+--------+--------+------------+--------+
+5 rows in set (0.00 sec)
