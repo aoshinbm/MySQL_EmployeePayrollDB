@@ -1,0 +1,40 @@
+mysql> alter table EmployeePayroll
+    -> add department_name varchar(150) not null;
+
+mysql> alter table EmployeePayroll
+    -> add address varchar(500) default "TBD";
+
+mysql> alter table EmployeePayroll
+    -> add phonenumber int;
+
+mysql> desc EmployeePayroll;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| emp_id          | int          | NO   | PRI | NULL    | auto_increment |
+| name            | varchar(30)  | YES  |     | NULL    |                |
+| salary          | int          | YES  |     | NULL    |                |
+| start_date      | date         | YES  |     | NULL    |                |
+| gender          | varchar(150) | NO   |     | NULL    |                |
+| phonenumber     | int          | YES  |     | NULL    |                |
+| department_name | varchar(150) | NO   |     | NULL    |                |
+| address         | varchar(500) | YES  |     | TBD     |                |
++-----------------+--------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+insert into EmployeePayroll
+values (7,"Ramesh",67000,"2014-1-1","male",778954321,"Hr","");
+select * from EmployeePayroll;
+
+mysql> select * from EmployeePayroll;
++--------+--------+--------+------------+--------+-------------+-----------------+---------+
+| emp_id | name   | salary | start_date | gender | phonenumber | department_name | address |
++--------+--------+--------+------------+--------+-------------+-----------------+---------+
+|      1 | Regina |  23000 | 2019-08-14 | female |        NULL |                 | TBD     |
+|      2 | Zeith  |  17000 | 2004-01-01 | male   |        NULL |                 | TBD     |
+|      3 | Romaa  |  30000 | 2014-08-12 | female |        NULL |                 | TBD     |
+|      4 | Pinku  |  17000 | 2008-10-21 | female |        NULL |                 | TBD     |
+|      5 | Zain   |  23450 | 2015-02-03 | male   |        NULL |                 | TBD     |
+|      7 | Ramesh |  67000 | 2014-01-01 | male   |   778954321 | Hr              |         |
++--------+--------+--------+------------+--------+-------------+-----------------+---------+
+6 rows in set (0.00 sec)

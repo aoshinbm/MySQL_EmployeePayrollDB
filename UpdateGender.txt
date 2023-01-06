@@ -14,33 +14,22 @@ desc EmployeePayroll;
 mysql> UPDATE EmployeePayroll
     -> SET gender = "female"
     -> WHERE emp_id = 1;
-Query OK, 1 row affected (0.00 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
 
 mysql> UPDATE EmployeePayroll
     -> SET gender = "female"
     -> WHERE name="Romaa";
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> UPDATE EmployeePayroll
     -> SET gender = "male"
     -> WHERE salary=23450;
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> UPDATE EmployeePayroll
     -> SET gender = "male"
     -> WHERE emp_id = 2;
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> UPDATE EmployeePayroll
     -> SET gender = "female"
     -> WHERE name="Pinku";
-Query OK, 1 row affected (0.03 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> select * from EmployeePayroll;
 +--------+--------+--------+------------+--------+
@@ -52,4 +41,3 @@ mysql> select * from EmployeePayroll;
 |      4 | Pinku  |  17000 | 2008-10-21 | female |
 |      5 | Zain   |  23450 | 2015-02-03 | male   |
 +--------+--------+--------+------------+--------+
-5 rows in set (0.00 sec)
