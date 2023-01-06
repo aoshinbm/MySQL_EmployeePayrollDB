@@ -33,27 +33,3 @@ mysql> desc EmployeePayroll;
 +-----------------+---------------+------+-----+---------+----------------+
 13 rows in set (0.00 sec)
 
-mysql> insert into EmployeePayroll
-    -> (emp_id,name,department_name,gender,basic_pay,deductions,taxable_pay,income_tax,net_pay,start_date,
-    -> salary,phonenumber,address)
-    -> values
-    -> (8,"Terissa","Sales","female",300000,0,0,0,0,"2019-11-13",35000,0,""),
-    -> (9,"Terissa","Marketing","female",300000,10000,25000,5000,20000,"2018-1-3",30000,0,"");
-Query OK, 2 rows affected (0.01 sec)
-Records: 2  Duplicates: 0  Warnings: 0
-
-mysql> select * from EmployeePayroll;
-+--------+---------+--------+------------+--------+-------------+-----------------+---------+-----------+------------+-------------+------------+---------+
-| emp_id | name    | salary | start_date | gender | phonenumber | department_name | address | basic_pay | deductions | taxable_pay | income_tax | net_pay |
-+--------+---------+--------+------------+--------+-------------+-----------------+---------+-----------+------------+-------------+------------+---------+
-|      1 | Regina  |  23000 | 2019-08-14 | female |        NULL |                 | TBD     |         0 |          0 |           0 |          0 |       0 |
-|      2 | Zeith   |  17000 | 2004-01-01 | male   |        NULL |                 | TBD     |         0 |          0 |           0 |          0 |       0 |
-|      3 | Romaa   |  30000 | 2014-08-12 | female |        NULL |                 | TBD     |         0 |          0 |           0 |          0 |       0 |
-|      4 | Pinku   |  17000 | 2008-10-21 | female |        NULL |                 | TBD     |         0 |          0 |           0 |          0 |       0 |
-|      5 | Zain    |  23450 | 2015-02-03 | male   |        NULL |                 | TBD     |         0 |          0 |           0 |          0 |       0 |
-|      7 | Ramesh  |  67000 | 2014-01-01 | male   |   778954321 | Hr              |         |         0 |          0 |           0 |
-         0 |       0 |
-|      8 | Terissa |  35000 | 2019-11-13 | female |           0 | Sales           |         |    300000 |          0 |           0 |          0 |       0 |
-|      9 | Terissa |  30000 | 2018-01-03 | female |           0 | Marketing       |         |    300000 |      10000 |       25000 |       5000 |   20000 |
-+--------+---------+--------+------------+--------+-------------+-----------------+---------+-----------+------------+-------------+------------+---------+
-8 rows in set (0.00 sec)
