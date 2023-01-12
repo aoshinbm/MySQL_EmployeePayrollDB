@@ -1,0 +1,75 @@
+mysql> create table Department (
+    -> department_id int Primary Key AUTO_INCREMENT,
+    -> department_name varchar(30),
+    -> startdate_dept date );
+
+mysql> desc Department;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| department_id   | int         | NO   | PRI | NULL    | auto_increment |
+| department_name | varchar(30) | YES  |     | NULL    |                |
+| startdate_dept  | date        | YES  |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> create table salary (
+    -> basic_pay decimal primary key,
+    -> deductions decimal not null,
+    -> taxable_pay decimal not null,
+    -> income_tax decimal not null,
+    -> net_pay decimal not null);
+
+mysql> desc salary;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| basic_pay   | decimal(10,0) | NO   | PRI | NULL    |       |
+| deductions  | decimal(10,0) | NO   |     | NULL    |       |
+| taxable_pay | decimal(10,0) | NO   |     | NULL    |       |
+| income_tax  | decimal(10,0) | NO   |     | NULL    |       |
+| net_pay     | decimal(10,0) | NO   |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------------+
+| Tables_in_payroll_service |
++---------------------------+
+| department                |
+| employeepayroll           |
+| salary                    |
++---------------------------+
+3 rows in set (0.02 sec)
+
+mysql> SET FOREIGN_KEY_CHECKS = 0;
+
+mysql> ALTER TABLE EmployeePayroll
+    -> ADD FOREIGN KEY (basic_pay) REFERENCES salary(basic_pay);
+
+ (department_name)' at line 3
+mysql>  alter table employeepayroll
+    -> add foreign key (department_name)
+    -> references department(department_name);
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employeepayroll;
++-----------------+---------------+------+-----+---------+----------------+
+| Field           | Type          | Null | Key | Default | Extra          |
++-----------------+---------------+------+-----+---------+----------------+
+| emp_id          | int           | NO   | PRI | NULL    | auto_increment |
+| name            | varchar(30)   | YES  |     | NULL    |                |
+| salary          | int           | YES  |     | NULL    |                |
+| start_date      | date          | YES  |     | NULL    |                |
+| gender          | varchar(150)  | NO   |     | NULL    |                |
+| phonenumber     | int           | YES  |     | NULL    |                |
+| department_name | varchar(150)  | NO   | MUL | NULL    |                |
+| address         | varchar(500)  | YES  |     | TBD     |                |
+| basic_pay       | decimal(10,0) | NO   | MUL | NULL    |                |
+| deductions      | decimal(10,0) | NO   |     | NULL    |                |
+| taxable_pay     | decimal(10,0) | NO   |     | NULL    |                |
+| income_tax      | decimal(10,0) | NO   |     | NULL    |                |
+| net_pay         | decimal(10,0) | NO   |     | NULL    |                |
++-----------------+---------------+------+-----+---------+----------------+
+13 rows in set (0.00 sec)
